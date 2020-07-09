@@ -12,7 +12,7 @@ int main()
        while(n%2 == 0)
        {
            step2++;
-           n=n/2;
+           n=n/2;   //UPDATE n
        }
        while(n%3 == 0)
        {
