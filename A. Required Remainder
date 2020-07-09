@@ -1,0 +1,24 @@
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+int main ()
+{
+     int t;
+     cin>>t;
+     while(t--)
+     {
+          int x,y,n, max=0,found;
+          cin>>x>>y>>n;
+          for(int i=0; i<=n; i++)
+          {
+               if(i%x == y)
+               {
+                    found = i;
+                    if(found>max){
+                         max=found;
+                    }
+               }
+          }
+          printf("%d \n", max);
+     }
+}
