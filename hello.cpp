@@ -5,3 +5,5 @@ using namespace std;
 int main() {
     cout<<"hello"<<endl;
 }
+
+//I dont know why i solved this LOl :P
