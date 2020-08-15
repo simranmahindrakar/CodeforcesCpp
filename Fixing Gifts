@@ -1,0 +1,48 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+typedef long long ll;
+const long long M = 10e9+7;
+
+int main()
+{
+
+	int t;
+	cin>>t;
+	while(t--)
+	{
+		int n;
+		ll ans=0;
+		ll d1,d2;
+		ll min_a = M;
+	    ll min_b = M;
+		cin>>n;
+		ll a[n+1];
+		ll b[n+1];
+		for(ll i=0; i<n ; i++)
+		{
+			cin>>a[i];
+			min_a =  min(min_a, a[i]);   //get minimum of array a[]
+		}
+		for(ll i=0; i<n ; i++)
+		{
+			cin>>b[i];
+			min_b =  min(min_b, b[i]);   //get minimum of array b[]
+		}
+		for(ll i =0; i<n ; i++)
+		{
+			 d1 = a[i] - min_a;
+			 d2 = b[i] - min_b;
+			 ans += max(d1,d2);  // max of the steps to go from a[i] to min_a and b[i] to min_b
+		}
+		
+		cout<<ans<<endl;
+	}
+}
+
+Basically in this problem we need to count the minimum number of steps in which each element in the apple array equals the minimum in that array. Same for the oranges.
+So first thing we find the minimum in the apple array and orange array.
+We subtract from a[i] the min of array a
+We subtract from b[i] the min of array b
+and add the mx of the two differences to the ans.
+We will take the maximum at every step. Not just at the last step
