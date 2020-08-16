@@ -1,0 +1,36 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n;
+        cin>>n;
+        int ar[n+1];
+        for(int i=0;i<n;i++)
+        {
+            cin>>ar[i];
+        }
+        sort(ar,ar+n);
+        int mx=0;
+        for(int i=0;i<n-1;i++)
+        {
+            mx=max(mx,ar[i+1]-ar[i]);
+        }
+        if(mx>1)
+        {
+            cout<<"NO\n";
+        }
+        else
+        {
+            cout<<"YES\n";
+        }
+        
+    }
+    return 0;  
+} 
+
+The key here is to sort the input array.
+Now keep track of the difference between 2 adjacent elements. If the difference > 1 at any point, the answer is NO. 
